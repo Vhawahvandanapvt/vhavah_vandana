@@ -1,0 +1,366 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ========================================
+   VHAVAH VANDANA — Spiritual Design System
+   Tailwind CSS v4 with @theme inline
+   ======================================== */
+
+@theme inline {
+  /* Brand Colors — Spiritual Palette */
+  --color-saffron-50: #FFF8F0;
+  --color-saffron-100: #FFECD6;
+  --color-saffron-200: #FFD4A8;
+  --color-saffron-300: #FFB870;
+  --color-saffron-400: #FF9933;
+  --color-saffron-500: #E8820F;
+  --color-saffron-600: #CC6B00;
+  --color-saffron-700: #A35200;
+  --color-saffron-800: #7A3D00;
+  --color-saffron-900: #522800;
+
+  --color-gold-50: #FFFDF5;
+  --color-gold-100: #FFF8E0;
+  --color-gold-200: #FFEEB3;
+  --color-gold-300: #FFE080;
+  --color-gold-400: #FFD54F;
+  --color-gold-500: #FFC107;
+  --color-gold-600: #E5A800;
+  --color-gold-700: #B38600;
+  --color-gold-800: #806000;
+  --color-gold-900: #4D3A00;
+
+  --color-maroon-50: #FDF2F2;
+  --color-maroon-100: #F9D6D6;
+  --color-maroon-200: #F0A8A8;
+  --color-maroon-300: #E07070;
+  --color-maroon-400: #CC3D3D;
+  --color-maroon-500: #8B1A1A;
+  --color-maroon-600: #761515;
+  --color-maroon-700: #5E1010;
+  --color-maroon-800: #450C0C;
+  --color-maroon-900: #2D0808;
+
+  --color-ganga-50: #F0F9FF;
+  --color-ganga-100: #DCEEFB;
+  --color-ganga-200: #B5DBF5;
+  --color-ganga-300: #7EC2ED;
+  --color-ganga-400: #3BA5E0;
+  --color-ganga-500: #1A8FCC;
+  --color-ganga-600: #1474A8;
+  --color-ganga-700: #0F5A85;
+  --color-ganga-800: #0A3F5E;
+  --color-ganga-900: #06283A;
+
+  --color-cream-50: #FFFEFB;
+  --color-cream-100: #FFF9EE;
+  --color-cream-200: #FFF3DD;
+  --color-cream-300: #FFE9C4;
+  --color-cream-400: #FFDDA3;
+  --color-cream-500: #F5D08E;
+
+  --color-ivory: #FFFFF0;
+  --color-temple-bg: #FEFCF3;
+
+  /* Font families — set via next/font CSS variables */
+  --font-heading: var(--font-outfit, 'Outfit', sans-serif);
+  --font-body: var(--font-outfit, 'Outfit', system-ui, sans-serif);
+  --font-sans: var(--font-outfit, 'Outfit', sans-serif);
+  --font-playfair: var(--font-outfit, 'Outfit', sans-serif);
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out;
+  --animate-slide-in-left: slideInLeft 0.5s ease-out;
+  --animate-slide-in-right: slideInRight 0.5s ease-out;
+  --animate-scale-in: scaleIn 0.3s ease-out;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ========================================
+   Keyframe Animations
+   ======================================== */
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body, 'Outfit', system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Custom Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF9933, #CC6B00);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #E8820F, #A35200);
+}
+
+/* ========================================
+   Focus States — Accessible Spiritual
+   ======================================== */
+*:focus-visible {
+  outline: 2px solid #FF9933;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+::selection {
+  background-color: rgba(255, 153, 51, 0.2);
+  color: #522800;
+}
+
+/* ========================================
+   Mandala Background Pattern
+   ======================================== */
+.bg-mandala-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 153, 51, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(139, 26, 26, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 20%, rgba(255, 193, 7, 0.03) 0%, transparent 50%);
+}
+
+/* ========================================
+   Glass Effect
+   ======================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(12, 10, 9, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ========================================
+   Shimmer Loading Skeleton
+   ======================================== */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 153, 51, 0.05) 25%,
+    rgba(255, 153, 51, 0.12) 50%,
+    rgba(255, 153, 51, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ========================================
+   Spiritual Gradient Utilities
+   ======================================== */
+.gradient-saffron {
+  background: linear-gradient(135deg, #FF9933 0%, #E8820F 50%, #CC6B00 100%);
+}
+
+.gradient-spiritual {
+  background: linear-gradient(135deg, #FF9933 0%, #FFD54F 50%, #8B1A1A 100%);
+}
+
+.gradient-ganga {
+  background: linear-gradient(135deg, #3BA5E0 0%, #1A8FCC 50%, #0F5A85 100%);
+}
+
+.text-gradient-saffron {
+  background: linear-gradient(135deg, #FF9933, #CC6B00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-spiritual {
+  background: linear-gradient(135deg, #FF9933, #8B1A1A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   Temple Border Pattern
+   ======================================== */
+.border-temple {
+  border-image: linear-gradient(90deg, transparent, #FF9933, #FFD54F, #FF9933, transparent) 1;
+}
+
+
+
+:root {
+  --background: #FFFEFB;
+  --foreground: #2D231F;
+  --card: #FFFFFF;
+  --card-foreground: #2D231F;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D231F;
+  --primary: #E8820F;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFF8E0;
+  --secondary-foreground: #4D3A00;
+  --muted: #FFF3DD;
+  --muted-foreground: #7A3D00;
+  --accent: #FFF9EE;
+  --accent-foreground: #522800;
+  --destructive: #CC3D3D;
+  --border: #F0E6D8;
+  --input: #F0E6D8;
+  --ring: #E8820F;
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.75rem;
+  --sidebar: #FFFEFB;
+  --sidebar-foreground: #2D231F;
+  --sidebar-primary: #E8820F;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FFF8E0;
+  --sidebar-accent-foreground: #4D3A00;
+  --sidebar-border: #F0E6D8;
+  --sidebar-ring: #E8820F;
+}
+
+.dark {
+  --background: #14110F;
+  --foreground: #FFFEFB;
+  --card: #1C1816;
+  --card-foreground: #FFFEFB;
+  --popover: #1C1816;
+  --popover-foreground: #FFFEFB;
+  --primary: #FF9933;
+  --primary-foreground: #14110F;
+  --secondary: #3A2A20;
+  --secondary-foreground: #FFFEFB;
+  --muted: #2A1F18;
+  --muted-foreground: #D0C6B8;
+  --accent: #3A2A20;
+  --accent-foreground: #FFFEFB;
+  --destructive: #E07070;
+  --border: #3A2A20;
+  --input: #3A2A20;
+  --ring: #FF9933;
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: #14110F;
+  --sidebar-foreground: #FFFEFB;
+  --sidebar-primary: #FF9933;
+  --sidebar-primary-foreground: #14110F;
+  --sidebar-accent: #3A2A20;
+  --sidebar-accent-foreground: #FFFEFB;
+  --sidebar-border: #3A2A20;
+  --sidebar-ring: #FF9933;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
